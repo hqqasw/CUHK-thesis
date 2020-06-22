@@ -1,0 +1,132 @@
+\def\degree#1{\def\degree{#1}}
+\def\programme#1{\def\programme{#1}}
+\def\supervisor#1{\def\supervisor{#1}}
+\def\thesistitle#1{\def\thesistitle{#1}}
+\def\authorname#1{\def\authorname{#1}}
+\def\submitdate#1{\def\submitdate{#1}}
+\def\institution{The Chinese University of Hong Kong}
+
+\def\coverpage{
+	% no page number for the cover page
+	\thispagestyle{empty}
+
+	\vspace*{2cm}
+	\begin{center}
+	\Huge {\bf \thesistitle}
+
+	\vskip 1cm
+	\Large {\bf \authorname}
+
+	\vskip 1cm
+	\large
+	% both Fulfilment and Fulfillment are correct
+	A Thesis Submitted in Partial Fulfilment \\
+	of the Requirements for the Degree of \\
+	\degree \\
+	in \\
+	\programme \\
+
+	\vskip 1cm
+	%\large Supervised by \\
+
+	\vskip 0.5cm
+	%\large {\bf \supervisor}
+
+	\vskip 1cm
+	\large
+	 \institution \\
+	\submitdate
+	\end{center}
+
+	\vfill
+	\noindent
+%\institution~holds the copyright of this thesis.
+%Any person(s) intending to use a part or whole of the materials in the thesis
+%in a proposed publication must seek copyright release from the Dean of the
+%Graduate School.
+	\newpage
+}
+
+%=======================================================
+
+\def\abstractpage{
+        \addcontentsline{toc}{chapter}{Abstract}
+
+	\vspace*{2cm}
+	\large \noindent
+	Abstract of thesis entitled: \\
+	\indent \thesistitle \\
+	Submitted by \authorname \\
+	for the degree of \degree \\
+	at \institution~in \submitdate
+
+	\vskip 1cm \noindent
+	\input{abstract.tex}
+	\newpage
+}
+
+%=======================================================
+
+\def\acknowledgementpage{%
+        \chapter*{Acknowledgement}
+
+        \addcontentsline{toc}{chapter}{Acknowledgement}
+        \input{acknowledgement.tex}
+	\newpage
+}
+
+%=======================================================
+
+\def\dedicationpage{%
+	\vspace*{1cm}
+	\vfill
+	\begin{center}
+	\input{dedication.tex}
+	\end{center}
+	\vfill
+	\newpage
+}
+
+%=======================================================
+
+\newcommand{\note}[2]{%
+	%\vspace*{3mm}
+	\begin{center}
+	\framebox[13cm][t]{%
+		\hspace*{3mm}
+		\parbox[t]{12cm}{%
+			\vspace*{2mm}
+			\centerline{\bf #1}\vspace*{-2mm}
+			\rule{12cm}{0.5mm} 
+			\\#2
+		}
+	}
+	\end{center}
+	\vspace*{3mm}
+}
+
+\newcounter{mydefcounter}[chapter]
+
+\newcommand{\mydef}[1]{%
+	\stepcounter{mydefcounter}
+	\note{Definition \thechapter.\themydefcounter}{#1}
+}
+
+\newcommand{\ill}[1]{%
+	\vspace*{5mm}
+	\noindent{\bf $\equiv$ #1}
+	\vspace*{5mm}
+}
+
+\newcommand{\chapterend}{
+	\vfill
+	\noindent\rule{\textwidth}{0.5mm} \\
+	\noindent{\large\bf $\Box$ End of chapter.}
+}
+
+\newcommand{\reading}[1]{
+	\vfill
+	\noindent {\bf $\equiv$ Readings:}  #1
+}
+
+

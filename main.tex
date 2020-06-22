@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{layout}
+\usepackage{setspace}
+\usepackage{CJKutf8}
+\usepackage[hidelinks]{hyperref}
+
+% Chinese character spacing
+\renewcommand{\CJKglue}{\hskip 3pt}
+
+% Line spacing
+\linespread{1.6}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{systeme}        % align equations
+\usepackage{rotating}
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{algorithm}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{algpseudocode}
+\usepackage{mmstyle}
+\usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{dsfont}
+\usepackage{pifont}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\input{chapters/coverpage}
+\cleardoublepage
+
+% ===
+
+\setcounter{page}{0}
+\pagenumbering{roman}
+
+\input{chapters/abstract-en}
+\cleardoublepage
+
+\input{chapters/abstract-cn}
+\cleardoublepage
+
+\input{chapters/acknowledgements}
+\cleardoublepage
+
+% ===
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\cleardoublepage
+
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+\cleardoublepage
+
+\setcounter{page}{0}
+\pagenumbering{arabic}
+\pagestyle{headings}
+
+% ===
+
+\input{chapters/chapter-intro}
+\cleardoublepage
+
+\input{chapters/chapter-p1}
+\cleardoublepage
+
+\input{chapters/chapter-p2}
+\cleardoublepage
+
+\input{chapters/chapter-conclusion}
+\cleardoublepage
+
+
+% ===
+
+\bibliographystyle{plain}
+\bibliography{main}
+\addcontentsline{toc}{chapter}{Bibliography}
+\cleardoublepage
+
+\end{document}
